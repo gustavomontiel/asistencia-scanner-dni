@@ -5,3 +5,6 @@
 * Angular Material 12
 * Typescript 4.2
 * phonegap-plugin-barcodescanner
+## Development server
+1. Run `npm install`.
+2. Run `ionic serve`.
