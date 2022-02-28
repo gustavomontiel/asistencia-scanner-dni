@@ -7,4 +7,4 @@
 * phonegap-plugin-barcodescanner
 ## Development server
 1. Run `npm install`.
-2. Run `ionic serve`.
+2. Run `ionic capacitor run android -l --external`.
