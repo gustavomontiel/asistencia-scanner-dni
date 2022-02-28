@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Herramientas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+
+        <ion-button expand="full" color="secondary" size="large" shape="round" (click)="bajarArchivoCsv()">
+          Enviar datos por email
+        </ion-button>
+        <ion-item-divider>
+          
+        </ion-item-divider>
+        <ion-button expand="full" color="danger" size="large" shape="round" (click)="limpiar()">
+          Borrar datos del celular
+        </ion-button>
+    
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

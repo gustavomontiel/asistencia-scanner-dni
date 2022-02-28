@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Escanear Qr DNI
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+
+
+
+        <ion-button expand="full" color="secondary" size="large" shape="round" (click)="scan()">
+          Escanear
+        </ion-button>
+
+        <ion-item-divider>
+          <ion-label>
+            Configurar linterna
+          </ion-label>
+        </ion-item-divider>
+        <ion-item text-center>
+          <ion-label>Con linterna</ion-label>
+          <ion-toggle slot="start" name="blueberry" [(ngModel)]="conLinterna"></ion-toggle>
+        </ion-item>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
 </ion-content>

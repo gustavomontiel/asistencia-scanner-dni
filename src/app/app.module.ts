@@ -3,15 +3,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers, Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    IonicStorageModule.forRoot(
+      {
+        driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+      }
+    ), 
+    AppRoutingModule
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    BarcodeScanner,
+    InAppBrowser,
+    File,
+    EmailComposer,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
